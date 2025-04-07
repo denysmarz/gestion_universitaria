@@ -18,14 +18,20 @@ class UsuarioController extends Controller
         
         $request->validate([
             'name' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
             'email' => 'required|string|max:255|unique:users,email,' . $usuario->id,
         ]);
 
         $usuario->update([
             'name' => $request->input('name'),
+            'apellido' => $request->input('apellido'),
             'email' => $request->input('email'),
         ]);
 
         return redirect()->route('editar-perfil')->with('success', 'Perfil actualizado correctamente.');
+    }
+    public function home(){
+        $user = Auth::user();
+        return view('home', compact('user'));
     }
 }

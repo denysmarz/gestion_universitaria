@@ -79,15 +79,19 @@
             @csrf
             <div class="form-group">
                 <label for="email">Carnet de Identidad:</label>
-                <input type="email" name="email" id="email" required>
+                <input type="text" name="email" id="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
                 <input type="password" name="password" id="password" required>
             </div>
             <div class="form-group">
-                <label for="userInput">Nombre Completo:</label>
+                <label for="userInput">Nombre:</label>
                 <input type="text" name="name" id="userInput" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" required>
             </div>
             <div class="form-group">
                 <label for="area">Área (opcional):</label>

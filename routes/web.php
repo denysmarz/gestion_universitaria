@@ -41,7 +41,7 @@ Route::delete('/eliminar-respuesta-o/{id}', [RespuestaController::class, 'destro
 //logueo
 Route::view('/login', 'login')->name('login');
 Route::view('/registro', 'register')->name('registro');
-Route::view('/home', 'home')->middleware('auth')->name('home');
+Route::get('/home', [UsuarioController::class, 'home'])->middleware('auth')->name('home');
 
 Route::get('/editar-perfil', [UsuarioController::class, 'editarPerfil'])->middleware('auth')->name('editar-perfil');
 Route::put('/actualizar-perfil', [UsuarioController::class, 'actualizarPerfil'])->name('actualizar-perfil');

@@ -85,6 +85,9 @@
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" value="{{ $usuario->name }}" required>
 
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" value="{{ $usuario->apellido }}" required>
+
             <label for="email">Carnet de Identidad:</label>
             <input type="text" id="email" name="email" value="{{ $usuario->email }}" required>
 

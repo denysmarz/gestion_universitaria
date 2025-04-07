@@ -14,11 +14,10 @@ class LoginController extends Controller
     public function register(Request $request){
         $user = new User();
         $user ->name = $request->input('name');
+        $user ->apellido = $request->input('apellido');
         $user ->email = $request->input('email');
         $user ->password = Hash::make($request->input('password'));
         $user ->area = $request->input('area');
-        /*$user ->apellido = $request->input('apellido');
-        $user ->celular = $request->input('celular');*/
         $user->save();
         Auth::login($user);
         return redirect()->route('home');
@@ -41,7 +40,6 @@ class LoginController extends Controller
             if ($user->rol === 'admin') {
                 // mandar al admin la lista de usuarios
                 $usuarios = User::all();
-                //return view('admin', compact('usuarios')); // Envia la lista de usuarios a la vista
                 return redirect()->route('admin'); // Redirige a home.blade.php
             }
 
@@ -62,6 +60,7 @@ class LoginController extends Controller
     public function registerAdmin(Request $request){
         $user = new User();
         $user->name = $request->input('name');
+        $user->apellido = $request->input('apellido');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
         $user->area = $request->input('area');

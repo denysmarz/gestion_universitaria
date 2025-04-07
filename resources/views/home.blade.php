@@ -64,7 +64,7 @@
     </div>
 
     <div class="content-area">
-        <h1>Bienvenido</h1>
+        <h1>Bienvenido, {{ $user->name }}</h1>
 
         <div class="section">
             <h2>Informes por Dimensión</h2>

@@ -80,7 +80,7 @@
         <a href="{{route('registro-admin')}}"><button class="register-button">Registrar Usuario</button></a>
     </div>
 
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido, {{ $user->name }}</h1>
 
     <h2>Descarga de informes por dimensión</h2>
     <div class="nav-buttons">
